@@ -1,4 +1,12 @@
 <?xml version="1.0"?>
 <registry>
 
+  <!-- RESOURCE -->
+  <records prefix="plone.resources/redturtle-gallery"
+           interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+    <value key="css">
+      <element>++plone++redturtle.gallery/static/css/redturtlegallery.css</element>
+    </value>
+  </records>
+
 </registry>

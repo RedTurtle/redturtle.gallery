@@ -18,4 +18,13 @@
       directory="static"
       />
 
+  <browser:page
+      name="gallery_view"
+      for="plone.dexterity.interfaces.IDexterityContainer"
+      class=".gallery.GalleryView"
+      template="templates/gallery_view.pt"
+      permission="zope2.View"
+      layer="redturtle.gallery.interfaces.IRedturtleGalleryLayer"
+      />
+
 </configure>
