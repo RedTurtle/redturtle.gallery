@@ -11,6 +11,14 @@
 <metal:main_macro define-macro="content-core"
                   tal:define="images view/album_images">
 
+  <metal:override fill-slot="top_slot"
+                  tal:define="disable_column_one python:request.set('disable_plone.leftcolumn',1);
+                              disable_column_two python:request.set('disable_plone.rightcolumn',1);"/>
+
+  <metal:override fill-slot="css_slot">
+      <link rel="stylesheet" src="++resource++redturtle.gallery/css/redturtlegallery.css" />
+  </metal:override>
+
   <div metal:define-macro="text-field-view"
        id="parent-fieldname-text" class="stx"
        tal:define="text view/text"
