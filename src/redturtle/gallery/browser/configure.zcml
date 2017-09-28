@@ -27,4 +27,13 @@
       layer="redturtle.gallery.interfaces.IRedturtleGalleryLayer"
       />
 
+  <browser:page
+      name="gallery_modal"
+      for="*"
+      class=".gallery.GalleryModal"
+      template="templates/gallery_modal.pt"
+      permission="zope2.View"
+      layer="redturtle.gallery.interfaces.IRedturtleGalleryLayer"
+      />
+
 </configure>
