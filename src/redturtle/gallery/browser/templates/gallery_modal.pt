@@ -7,9 +7,29 @@
     <body>
         <metal:main fill-slot="main"
                     tal:define="portal context/@@plone_portal_state/portal">
+
             <div class="gallery-modal-wrapper">
-                <p tal:content="view/getIndex()">cacca</p>
+                <div class="gallery-slider pat-slider"
+                     data-pat-slider="initialScale: ${view/itemIndex}">
+
+                    <tal:images repeat="brain view/contents">
+                        <div class="gallery-item"
+                             tal:define="title brain/Title;
+                                         imgUrl brain/absolute_url">
+                            <figure class="item-image">
+                                <img tal:attributes="alt title;
+                                                     src imgUrl">
+                            </figure>
+                            <div class="item-title">
+                                <span tal:content="title">title</span>
+                            </div>
+                        </div>
+                    </tal:images>
+
+                </div>
+
             </div>
+
         </metal:main>
     </body>
 </html>

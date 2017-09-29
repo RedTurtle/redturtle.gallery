@@ -10,11 +10,17 @@ class GalleryView(FolderView, BrowserView):
 
 class GalleryModal(BrowserView):
     """
-    Gallery modal helper method for slick carousel
+    Gallery modal for slick carousel
     """
 
     contents = []
     itemIndex = -1
+
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+        self.getContents()
+        self.getIndex()
 
     def getContents(self):
         self.contents = self.context.listFolderContents(

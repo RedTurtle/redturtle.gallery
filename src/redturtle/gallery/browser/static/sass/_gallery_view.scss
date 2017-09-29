@@ -35,4 +35,19 @@ body.template-gallery_view {
             }
         }
     }
+
+    @media (max-width: 768px) {
+        .photo-gallery {
+            justify-content: center;
+
+            .photo-gallery-item {
+                width: 100%;
+
+                a {
+                    display: block;
+                    text-align: center;
+                }
+            }
+        }
+    }
 }
