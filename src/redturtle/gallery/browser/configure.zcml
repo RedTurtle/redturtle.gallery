@@ -2,6 +2,7 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="redturtle.gallery">
 
   <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
@@ -35,5 +36,16 @@
       permission="zope2.View"
       layer="redturtle.gallery.interfaces.IRedturtleGalleryLayer"
       />
+
+  <include package="plone.app.contentmenu" />
+  <browser:menuItems
+      for="plone.app.blocks.layoutbehavior.ILayoutBehaviorAdaptable"
+      menu="plone_displayviews">
+    <browser:menuItem
+        title="Gallery view"
+        action="gallery_view"
+        i18n:translate="title"
+        />
+  </browser:menuItems>
 
 </configure>
