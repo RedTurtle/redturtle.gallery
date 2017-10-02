@@ -33,7 +33,8 @@
              tal:define="itemUrl python: image.getURL()">
           <a title="" href="#"
              class="pat-plone-modal"
-             data-pat-plone-modal="position: 'center middle';"
+             data-pat-plone-modal="position: 'center middle';
+                                   title: ${context/title}"
              tal:attributes="title image/Description;
                              href string: ${context/absolute_url}/@@gallery_modal?image=${image/UID}">
             <img class="image-thumb"

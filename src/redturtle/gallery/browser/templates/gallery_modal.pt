@@ -10,7 +10,11 @@
 
             <div class="gallery-modal-wrapper">
                 <div class="gallery-slider pat-slider"
-                     data-pat-slider="initialScale: ${view/itemIndex}">
+                     data-pat-slider='{
+                                        "initialSlide": ${view/itemIndex},
+                                        "slidesToShow": 1,
+                                        "slidesToScroll": 1
+                                      }'>
 
                     <tal:images repeat="brain view/contents">
                         <div class="gallery-item"

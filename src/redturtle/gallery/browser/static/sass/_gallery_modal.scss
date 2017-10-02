@@ -1,6 +1,24 @@
+body.template-gallery_view {
+    .plone-modal-wrapper {
+        .plone-modal {
+            .plone-modal-header {
+                .plone-modal-title {
+                    display: block;
+                    padding: 10px 15px;
+                }
+            }
+
+            .plone-modal-footer {
+                padding: 0;
+            }
+        }
+    }
+}
+
 .gallery-modal-wrapper {
     .gallery-slider {
         position: relative;
+        padding: 15px 0 5px;
 
         .slick-list {
             text-align: center;
@@ -10,7 +28,8 @@
 
         ul.slick-dots {
             width: 100%;
-            padding: 0;
+            padding: 15px 0 0;
+            margin: 0;
             list-style: none;
             display: inline-flex;
             flex-flow: row nowrap;
