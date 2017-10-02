@@ -21,17 +21,13 @@ body.template-gallery_view {
             display: inline-block;
             padding: 20px;
             width: calc(100% / 3 - 40px);
-        }
-    }
 
-    .plone-modal-content {
-        #content-core {
-            figure.image-product {
-                text-align: center;
-            }
+            a {
+                display: block;
 
-            figcaption {
-                display: none;
+                img {
+                    max-width: 100%;
+                }
             }
         }
     }

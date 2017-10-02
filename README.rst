@@ -6,33 +6,29 @@
 redturtle.gallery
 =================
 
-Tell me what your product does
+Plone addon that adds a gallery view with a carousel made with slick.
+  
 
 Features
 --------
 
-- Can be bullet points
+- **Gallery view**  
+It adds a view called `gallery_view` and it's appliable to a folder that contains images. This view renders the images in natural dimensions and at click they open in a modal.
+  
+- **Gallery modal** 
+It's the modal opened by images in `Gallery view`. It's a Plone modal made with [Mockup](https://github.com/plone/mockup) with a [Slick](http://kenwheeler.github.io/slick/) carousel inside
 
 
 Examples
 --------
 
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
-
-
-Documentation
--------------
-
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
-
+**TODO**
 
 Translations
 ------------
 
 This product has been translated into
-
-- Klingon (thanks, K'Plai)
+- Italian
 
 
 Installation
@@ -51,22 +47,23 @@ Install redturtle.gallery by adding it to your buildout::
 and then running ``bin/buildout``
 
 
-Contribute
-----------
+Dependencies
+------------
 
-- Issue Tracker: https://github.com/collective/redturtle.gallery/issues
-- Source Code: https://github.com/collective/redturtle.gallery
-- Documentation: https://docs.plone.org/foo/bar
+This product has been tested on Plone 5.1
+  
 
+Credits
+------------
 
-Support
--------
-
-If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
+Developed with the support of [Regione Emilia Romagna](http://www.regione.emilia-romagna.it/).
 
 
-License
--------
+Authors
+------------
 
-The project is licensed under the GPLv2.
+This product was developed by RedTurtle Technology team.
+
+.. image:: http://www.redturtle.net/redturtle_banner.png
+   :alt: RedTurtle Technology Site
+   :target: http://www.redturtle.net/

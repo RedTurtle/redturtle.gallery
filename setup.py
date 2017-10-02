@@ -43,6 +43,7 @@ setup(
         'setuptools',
         'z3c.jbot',
         'redturtle.patterns.slider',
+        'plone.app.imaging',
     ],
     extras_require={
         'test': [

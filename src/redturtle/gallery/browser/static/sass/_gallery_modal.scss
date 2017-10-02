@@ -16,6 +16,18 @@ body.template-gallery_view {
 }
 
 .gallery-modal-wrapper {
+    .plone-modal-content {
+        #content-core {
+            figure.image-product {
+                text-align: center;
+            }
+
+            figcaption {
+                display: none;
+            }
+        }
+    }
+
     .gallery-slider {
         position: relative;
         padding: 15px 0 5px;
