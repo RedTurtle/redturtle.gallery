@@ -7,10 +7,6 @@
     <value key="css">
       <element>++plone++redturtle.gallery/css/redturtlegallery.css</element>
     </value>
-
-    <value key="svg">
-      <element>++plone++redturtle.gallery/arrow.svg</element>
-    </value>
   </records>
 
   <!-- BUNDLE -->
