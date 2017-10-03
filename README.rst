@@ -68,6 +68,9 @@ Dependencies
 This product has been tested on Plone 5.1
   
 
+This add-on requires ``plone.app.images`` and ``redturtle.pattern.slider``.
+  
+
 Credits
 ------------
 
