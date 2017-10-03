@@ -16,7 +16,11 @@ Features
 It adds a view called `gallery_view` and it's appliable to a folder that contains images. This view renders the images in natural dimensions and at click they open in a modal.
   
 - **Gallery modal** 
-It's the modal opened by images in `Gallery view`. It's a Plone modal made with [Mockup](https://github.com/plone/mockup) with a [Slick](http://kenwheeler.github.io/slick/) carousel inside
+It's the modal opened by images in `Gallery view`. It's a Plone modal made with `Mockup`__ with a `Slick`__ carousel inside.
+
+
+__ https://github.com/plone/mockup/
+__ http://kenwheeler.github.io/slick/
 
 
 Examples
@@ -56,7 +60,10 @@ This product has been tested on Plone 5.1
 Credits
 ------------
 
-Developed with the support of [Regione Emilia Romagna](http://www.regione.emilia-romagna.it/).
+Developed with the support of `Regione Emilia Romagna`__.
+
+__ http://www.regione.emilia-romagna.it/
+
 
 
 Authors
@@ -64,6 +71,6 @@ Authors
 
 This product was developed by RedTurtle Technology team.
 
-.. image:: http://www.redturtle.net/redturtle_banner.png
+.. image:: http://www.redturtle.it/redturtle_banner.png
    :alt: RedTurtle Technology Site
-   :target: http://www.redturtle.net/
+   :target: http://www.redturtle.it/
