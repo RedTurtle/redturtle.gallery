@@ -26,12 +26,23 @@ __ http://kenwheeler.github.io/slick/
 Examples
 --------
 
-**TODO**
+- **Gallery view**
+
+.. image:: https://github.com/RedTurtle/redturtle.gallery/blob/master/docs/screenshots/gallery_view.png
+   :alt: Gallery view preview
+  
+  
+- **Gallery modal**
+
+.. image:: https://github.com/RedTurtle/redturtle.gallery/blob/master/docs/screenshots/gallery_modal.png
+   :alt: Gallery modal preview
+
 
 Translations
 ------------
 
 This product has been translated into
+
 - Italian
 
 
