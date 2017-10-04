@@ -2,5 +2,7 @@
 <metadata>
   <version>1000</version>
   <dependencies>
+     <dependency>profile-redturtle.patterns.slider:default</dependency>
+     <dependency>profile-plone.app.imaging:default</dependency>
   </dependencies>
 </metadata>
