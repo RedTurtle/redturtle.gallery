@@ -5,7 +5,7 @@ Changelog
 0.1.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Added dependencies in metadata.xml to programmatically install them on add-on installation [nzambello]
 
 
 0.1.1 (2017-10-03)
