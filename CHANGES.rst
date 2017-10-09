@@ -5,7 +5,7 @@ Changelog
 0.1.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Added focus on load [nzambello]
 
 
 0.1.2 (2017-10-04)
