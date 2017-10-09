@@ -30,8 +30,15 @@
                         </div>
                     </tal:images>
 
-                </div>
+                    <script type="text/javascript">
+                        $('.gallery-slider').on('init', function(e) {
+                            setTimeout(function() {
+                                $('.slick-active').focus();
+                            }, 100);
+                        });
+                    </script>
 
+                </div>
             </div>
 
         </metal:main>
