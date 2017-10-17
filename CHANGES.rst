@@ -6,6 +6,7 @@ Changelog
 ------------------
 
 - Handled tabs navigation preventing going out of the modal [nzambello]
+- Added close button to avoid mockup modal close button issues [nzambello]
 
 
 0.1.3 (2017-10-13)
