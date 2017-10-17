@@ -9,6 +9,13 @@
                     tal:define="portal context/@@plone_portal_state/portal">
 
             <div class="gallery-modal-wrapper">
+                <button class="gallery-modal-close"
+                        aria-controls="gallery-modal-wrapper"
+                        aria-label="Esci dalla modale"
+                        title="Esci dalla modale">
+                    <span class="icon" aria-hidden="true">&times;</span>
+                    <span class="sr-only">chiudi</span>
+                </button>
                 <div class="gallery-slider pat-slider"
                      data-pat-slider='{
                                         "initialSlide": ${view/itemIndex},
@@ -29,38 +36,57 @@
                             </div>
                         </div>
                     </tal:images>
-
-                    <script type="text/javascript">
-                        $('.gallery-slider').on('init', function(e) {
-                            setTimeout(function() {
-                                $('.slick-active').focus();
-
-                                var inputs = $('.gallery-slider').find('select, input, textarea, button, a');
-                                var firstInput = inputs.first();
-                                var lastInput = inputs.last();
-
-                                lastInput.on('keydown', function(e) {
-                                    if (e.which === 9) {
-                                        if (!e.shiftKey) {
-                                            e.preventDefault();
-                                            firstInput.focus();
-                                        }
-                                    }
-                                });
-
-                                firstInput.on('keydown', function(e) {
-                                    if (e.which === 9) {
-                                        if (e.shiftKey) {
-                                            e.preventDefault();
-                                            lastInput.focus();
-                                        }
-                                    }
-                                });
-                            }, 100);
-                        });
-                    </script>
-
                 </div>
+
+                <script type="text/javascript">
+                    $('.gallery-slider').on('init', function(e) {
+                        setTimeout(function() {
+                            $('.gallery-slider .slick-active').focus();
+
+                            var inputs = $('.gallery-modal-wrapper').find('select, input, textarea, button:not(.gallery-modal-close), a');
+                            var firstInput = inputs.first();
+                            var lastInput = inputs.last();
+                            var closeInput = $('.gallery-modal-close').first();
+
+                            lastInput.on('keydown', function(e) {
+                                if (e.which === 9) {
+                                    if (!e.shiftKey) {
+                                        e.preventDefault();
+                                        closeInput.focus();
+                                    }
+                                }
+                            });
+
+                            firstInput.on('keydown', function(e) {
+                                if (e.which === 9) {
+                                    if (e.shiftKey) {
+                                        e.preventDefault();
+                                        closeInput.focus();
+                                    }
+                                }
+                            });
+
+                            closeInput.on('click', function(e) {
+                                $('.plone-modal-close').click();
+                            });
+
+                            closeInput.on('keydown', function(e) {
+                                if (e.which === 9) {
+                                    e.preventDefault();
+
+                                    if (e.shiftKey) {
+                                        lastInput.focus();
+                                    }
+                                    else {
+                                        firstInput.focus();
+                                    }
+                                }
+                            });
+
+                        }, 100);
+                    });
+                </script>
+
             </div>
 
         </metal:main>
