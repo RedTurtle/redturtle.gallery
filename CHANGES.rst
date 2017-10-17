@@ -5,7 +5,7 @@ Changelog
 0.1.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Handled tabs navigation preventing going out of the modal [nzambello]
 
 
 0.1.3 (2017-10-13)
