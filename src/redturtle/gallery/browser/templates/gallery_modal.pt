@@ -34,6 +34,28 @@
                         $('.gallery-slider').on('init', function(e) {
                             setTimeout(function() {
                                 $('.slick-active').focus();
+
+                                var inputs = $('.gallery-slider').find('select, input, textarea, button, a');
+                                var firstInput = inputs.first();
+                                var lastInput = inputs.last();
+
+                                lastInput.on('keydown', function(e) {
+                                    if (e.which === 9) {
+                                        if (!e.shiftKey) {
+                                            e.preventDefault();
+                                            firstInput.focus();
+                                        }
+                                    }
+                                });
+
+                                firstInput.on('keydown', function(e) {
+                                    if (e.which === 9) {
+                                        if (e.shiftKey) {
+                                            e.preventDefault();
+                                            lastInput.focus();
+                                        }
+                                    }
+                                });
                             }, 100);
                         });
                     </script>
