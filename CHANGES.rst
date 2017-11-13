@@ -7,6 +7,8 @@ Changelog
 
 - Handled tabs navigation preventing going out of the modal [nzambello]
 - Added close button to avoid mockup modal close button issues [nzambello]
+- Added uninstall profiles [pnicolli]
+- Loading resources bundle only when showing our custom view [pnicolli]
 
 
 0.1.3 (2017-10-13)
