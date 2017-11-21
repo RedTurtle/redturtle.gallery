@@ -1,4 +1,5 @@
 from plone.app.contenttypes.browser.folder import FolderView
+from Products.CMFPlone.resources import add_bundle_on_request
 from Products.Five.browser import BrowserView
 
 
@@ -6,6 +7,9 @@ class GalleryView(FolderView, BrowserView):
     """
     Gallery view
     """
+    def __call__(self):
+        add_bundle_on_request(self.request, 'redturtle-gallery-bundle')
+        return super(GalleryView, self).__call__()
 
 
 class GalleryModal(BrowserView):

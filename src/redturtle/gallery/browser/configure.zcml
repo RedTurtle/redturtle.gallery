@@ -39,7 +39,7 @@
 
   <include package="plone.app.contentmenu" />
   <browser:menuItems
-      for="plone.app.blocks.layoutbehavior.ILayoutBehaviorAdaptable"
+      for="plone.app.contenttypes.interfaces.IFolder"
       menu="plone_displayviews">
     <browser:menuItem
         title="Gallery view"
