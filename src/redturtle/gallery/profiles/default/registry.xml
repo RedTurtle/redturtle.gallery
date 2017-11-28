@@ -7,18 +7,20 @@
     <value key="css">
       <element>++plone++redturtle.gallery/css/redturtlegallery.css</element>
     </value>
+    <value key="js">++plone++redturtle.gallery/js/integration.js</value>
   </records>
 
   <!-- BUNDLE -->
   <records prefix="plone.bundles/redturtle-gallery-bundle"
            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
-    <value key="enabled">False</value>
+    <value key="enabled">True</value>
     <value key="resources" purge="false">
       <element>redturtle-gallery</element>
     </value>
     <value key="csscompilation">++plone++redturtle.gallery/css/redturtlegallery.css</value>
+    <value key="jscompilation">++plone++redturtle.gallery/js/redturtle-gallery-bundle-compiled.min.js</value>
     <value key="last_compilation">2019-11-26 00:00:00</value>
-    <value key="compile">False</value>
+    <value key="compile">True</value>
   </records>
 
 </registry>

@@ -29,13 +29,47 @@ module.exports = function (grunt) {
         src: 'css/*.css'
       }
     },
+    requirejs: {
+      'redturtle-gallery': {
+        options: {
+          baseUrl: './',
+          generateSourceMaps: true,
+          preserveLicenseComments: false,
+          paths: {
+            jquery: 'empty:',
+          },
+          wrapShim: true,
+          name: 'js/integration.js',
+          exclude: ['jquery'],
+          out: 'js/bundle-compiled.js',
+          optimize: 'none',
+        },
+      },
+    },
+		uglify: {
+			gallery: {
+				options: {
+					sourceMap: true,
+					sourceMapIncludeSources: false,
+				},
+				files: {
+          'js/redturtle-gallery-bundle-compiled.min.js': ['js/bundle-compiled.js'],
+				},
+			},
+		},
     watch: {
-      scripts: {
+      styles: {
         files: [
           'sass/**/*.scss',
         ],
         tasks: ['sass', 'postcss']
-      }
+      },
+      scripts: {
+				files: [
+          './js/integration.js',
+				],
+				tasks: ['requirejs', 'uglify'],
+      },
     }
   });
 
@@ -43,6 +77,6 @@ module.exports = function (grunt) {
   // CWD to theme folder
   grunt.file.setBase('./src/redturtle/gallery/browser/static');
 
-  grunt.registerTask('compile', ['sass', 'postcss']);
+  grunt.registerTask('compile', ['sass', 'postcss', 'requirejs', 'uglify']);
   grunt.registerTask('default', ['watch']);
 };
