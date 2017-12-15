@@ -109,10 +109,12 @@ body.template-gallery_view {
                 max-width: 100%;
                 width: auto;
                 height: 100%;
+                overflow: hidden;
 
                 img {
                     margin: auto;
                     height: 100%;
+                    width: auto;
                 }
             }
 
