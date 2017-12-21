@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from redturtle.gallery import logger
 from plone import api
+from redturtle.gallery import logger
+
 
 DEFAULT_PROFILE = 'profile-redturtle.gallery:default'
 

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from plone.app.contenttypes.browser.folder import FolderView
 from Products.CMFPlone.resources import add_bundle_on_request
 from Products.Five.browser import BrowserView
@@ -28,7 +29,7 @@ class GalleryModal(BrowserView):
 
     def getContents(self):
         self.contents = self.context.listFolderContents(
-                            contentFilter={"portal_type": "Image"}
+                            contentFilter={'portal_type': 'Image'}
                         )
         return self.contents
 
