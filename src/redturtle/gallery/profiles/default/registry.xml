@@ -13,7 +13,7 @@
   <!-- BUNDLE -->
   <records prefix="plone.bundles/redturtle-gallery-bundle"
            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
-    <value key="enabled">True</value>
+    <value key="enabled">False</value>
     <value key="resources" purge="false">
       <element>redturtle-gallery</element>
     </value>
