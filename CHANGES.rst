@@ -5,7 +5,7 @@ Changelog
 0.1.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix in registry.xml [pnicolli]
 
 
 0.1.4 (2017-12-21)
