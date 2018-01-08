@@ -29,6 +29,15 @@
       />
 
   <browser:page
+      name="gallery_view"
+      for="plone.app.contenttypes.interfaces.ICollection"
+      class=".gallery.GalleryCollectionView"
+      template="templates/gallery_view.pt"
+      permission="zope2.View"
+      layer="redturtle.gallery.interfaces.IRedturtleGalleryLayer"
+      />
+
+  <browser:page
       name="gallery_modal"
       for="*"
       class=".gallery.GalleryModal"
@@ -40,6 +49,16 @@
   <include package="plone.app.contentmenu" />
   <browser:menuItems
       for="plone.app.contenttypes.interfaces.IFolder"
+      menu="plone_displayviews">
+    <browser:menuItem
+        title="Gallery view"
+        action="gallery_view"
+        i18n:translate="title"
+        />
+  </browser:menuItems>
+
+  <browser:menuItems
+      for="plone.app.contenttypes.interfaces.ICollection"
       menu="plone_displayviews">
     <browser:menuItem
         title="Gallery view"
