@@ -10,14 +10,14 @@ require([
     else {
       setTimeout(checkSliderLoaded, 200);
     }
+
+    return false;
   }
 
 
   $(document).on('ready', function() {
     $('body').on('init', '.gallery-slider', function(e) {
       if (checkSliderLoaded()) {
-        $('.gallery-slider .slick-active').focus();
-
         var inputs = $('.gallery-modal-wrapper').find('select, input, textarea, button:not(.gallery-modal-close), a');
         var firstInput = inputs.first();
         var lastInput = inputs.last();
@@ -57,6 +57,10 @@ require([
             }
           }
         });
+
+        setTimeout(function() {
+          $('.gallery-slider .gallery-item.slick-active').focus();
+        }, 500);
       }
     });
   });
