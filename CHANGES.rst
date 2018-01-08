@@ -7,6 +7,7 @@ Changelog
 
 - Fix in template objects [nzambello]
 - Fix js event handling [nzambello]
+- Gallery view: added support for collections of images [nzambello]
 
 
 0.1.5 (2017-12-29)

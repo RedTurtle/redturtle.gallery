@@ -13,7 +13,7 @@ Features
 --------
 
 - **Gallery view**  
-It adds a view called *gallery_view* and it's appliable to a folder that contains images. This view renders the images in natural dimensions and at click they open in a modal.
+It adds a view called *gallery_view* and it's appliable to a folder that contains images and to a collection of images. This view renders the images in natural dimensions and at click they open in a modal.
   
 - **Gallery modal** 
 It's the modal opened by clicking on images in *Gallery view*. It's a Plone modal made with `Mockup`__ with a `Slick`__ carousel inside.
