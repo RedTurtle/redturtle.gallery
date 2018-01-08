@@ -5,7 +5,7 @@ Changelog
 0.1.6 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix in template objects [nzambello]
 
 
 0.1.5 (2017-12-29)
