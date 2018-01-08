@@ -2,9 +2,20 @@ require([
   'jquery',
 ], function ($) {
   'use strict';
+
+  function checkSliderLoaded() {
+    if ($('.gallery-slider').length && $('.gallery-slider').hasClass('slick-initialized')) {
+      return true;
+    }
+    else {
+      setTimeout(checkSliderLoaded, 200);
+    }
+  }
+
+
   $(document).on('ready', function() {
     $('body').on('init', '.gallery-slider', function(e) {
-      setTimeout(function() {
+      if (checkSliderLoaded()) {
         $('.gallery-slider .slick-active').focus();
 
         var inputs = $('.gallery-modal-wrapper').find('select, input, textarea, button:not(.gallery-modal-close), a');
@@ -46,8 +57,7 @@ require([
             }
           }
         });
-
-      }, 100);
+      }
     });
   });
 });

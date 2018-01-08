@@ -6,6 +6,7 @@ Changelog
 ------------------
 
 - Fix in template objects [nzambello]
+- Fix js event handling [nzambello]
 
 
 0.1.5 (2017-12-29)
