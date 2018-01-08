@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from plone.app.contenttypes.browser.folder import FolderView
 from plone.app.contenttypes.browser.collection import CollectionView
-from plone.app.collection.interfaces import ICollection
+from plone.app.contenttypes.interfaces import ICollection
 from Products.CMFPlone.resources import add_bundle_on_request
 from Products.Five.browser import BrowserView
 
@@ -39,13 +39,13 @@ class GalleryModal(BrowserView):
 
     def getContents(self):
         if ICollection.providedBy(self.context):
-            self.contents = self.context.listFolderContents(
-                                contentFilter={'portal_type': 'Image'}
-                            )
-        else:
             self.contents = [x.getObject() for x in self.context.queryCatalog(
                                 {'portal_type': 'Image'}
                             )]
+        else:
+            self.contents = self.context.listFolderContents(
+                                contentFilter={'portal_type': 'Image'}
+                            )
 
     def getIndex(self):
         self.itemIndex = [x.UID() for x in self.contents].index(
