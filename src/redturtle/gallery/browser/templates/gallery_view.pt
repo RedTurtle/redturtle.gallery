@@ -16,6 +16,7 @@
 <metal:main_macro define-macro="content-core"
                   tal:define="images view/album_images">
 
+
   <div metal:define-macro="text-field-view"
        id="parent-fieldname-text" class="stx"
        tal:define="text view/text"
