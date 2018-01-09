@@ -21,4 +21,13 @@
     handler=".upgrades.import_records_registry"
   />
 
+  <genericsetup:upgradeStep
+    source="1002"
+    destination="1003"
+    profile="redturtle.gallery:default"
+    title="Import type registry"
+    description="Added configuration for Collections"
+    handler=".upgrades.import_types_registry"
+  />
+
 </configure>
