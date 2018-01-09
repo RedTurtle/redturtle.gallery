@@ -10,8 +10,6 @@ require([
     else {
       setTimeout(checkSliderLoaded, 200);
     }
-
-    return false;
   }
 
 
