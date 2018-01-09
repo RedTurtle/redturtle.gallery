@@ -1,53 +1,33 @@
 {
-  "//": "Put here only devDependencies, theme dependencies should stay inside of the theme folder.",
   "name": "redturtle.gallery",
   "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:RedTurtle/redturtle.gallery.git"
   },
-  "keywords": [
-    "plone",
-    "gallery",
-    "redturtle.gallery",
-    "addon"
-  ],
+  "keywords": ["plone", "gallery", "redturtle.gallery", "addon"],
   "author": "RedTurtle Technology",
   "license": "GPL-3.0",
   "homepage": "https://github.com/RedTurtle/redturtle.gallery",
   "devDependencies": {
-    "autoprefixer": "^6.5.1",
+    "autoprefixer": "^7.2.4",
     "cssnano": "^3.7.7",
-    "grunt": "~1.0.1",
+    "grunt": "^1.0.1",
     "grunt-contrib-requirejs": "^1.0.0",
-    "grunt-contrib-uglify": "^3.0.1",
-    "grunt-contrib-watch": "latest",
-    "grunt-postcss": "^0.8.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.9.0",
     "grunt-sass": "^1.2.1",
     "grunt-sed": "^0.1.1",
     "load-grunt-tasks": "^3.5.2",
     "pixrem": "^3.0.2",
-    "prettier": "^1.5.3",
-    "stylelint": "^8.0.0",
-    "stylelint-config-recommended": "^1.0.0"
+    "prettier": "^1.9.2",
+    "stylelint": "^8.4.0",
+    "stylelint-config-prettier": "^2.0.0",
+    "stylelint-config-recommended": "^2.0.1"
   },
   "scripts": {
-    "prettier:scss": "prettier --single-quote --tab-width 4 --list-different src/redturtle/agidtheme/theme/sass/**/*.scss",
-    "prettier:scss:fix": "prettier --single-quote --tab-width 4 --write src/redturtle/agidtheme/theme/sass/**/*.scss"
-  },
-  "stylelint": {
-    "extends": "stylelint-config-recommended",
-    "rules": {
-      "at-rule-no-unknown": [
-        true,
-        {
-          "ignoreAtRules": [
-            "extend",
-            "include",
-            "mixin"
-          ]
-        }
-      ]
-    }
+    "prettier:scss": "prettier --list-different src/redturtle/agidtheme/theme/sass/**/*.scss",
+    "prettier:scss:fix": "prettier --write src/redturtle/agidtheme/theme/sass/**/*.scss"
   }
 }
