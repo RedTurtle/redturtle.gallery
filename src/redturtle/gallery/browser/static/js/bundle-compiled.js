@@ -1,22 +1,23 @@
-require([
-  'jquery',
-], function ($) {
+require(['jquery'], function($) {
   'use strict';
 
   function checkSliderLoaded() {
-    if ($('.gallery-slider').length && $('.gallery-slider').hasClass('slick-initialized')) {
+    if (
+      $('.gallery-slider').length &&
+      $('.gallery-slider').hasClass('slick-initialized')
+    ) {
       return true;
-    }
-    else {
+    } else {
       setTimeout(checkSliderLoaded, 200);
     }
   }
 
-
   $(document).on('ready', function() {
-    $('body').on('init', '.gallery-slider', function(e) {
+    $('body').on('init', '.gallery-slider', function() {
       if (checkSliderLoaded()) {
-        var inputs = $('.gallery-modal-wrapper').find('select, input, textarea, button:not(.gallery-modal-close), a');
+        var inputs = $('.gallery-modal-wrapper').find(
+          'select, input, textarea, button:not(.gallery-modal-close), a'
+        );
         var firstInput = inputs.first();
         var lastInput = inputs.last();
         var closeInput = $('.gallery-modal-close').first();
@@ -39,7 +40,7 @@ require([
           }
         });
 
-        closeInput.on('click', function(e) {
+        closeInput.on('click', function() {
           $('.plone-modal-close').click();
         });
 
@@ -49,8 +50,7 @@ require([
 
             if (e.shiftKey) {
               lastInput.focus();
-            }
-            else {
+            } else {
               firstInput.focus();
             }
           }

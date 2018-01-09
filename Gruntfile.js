@@ -1,4 +1,4 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
   'use strict';
   require('load-grunt-tasks')(grunt);
 
@@ -13,21 +13,21 @@ module.exports = function (grunt) {
         files: {
           // 'destination': 'source'
           'css/redturtlegallery.css': 'sass/redturtlegallery.scss',
-        }
-      }
+        },
+      },
     },
     postcss: {
       options: {
         map: true,
         processors: [
           require('autoprefixer')({
-            browsers: ['last 2 versions', 'ie >= 11', 'iOS >= 6']
-          })
-        ]
+            browsers: ['last 2 versions', 'ie >= 11', 'iOS >= 6'],
+          }),
+        ],
       },
       dist: {
-        src: 'css/*.css'
-      }
+        src: 'css/*.css',
+      },
     },
     requirejs: {
       'redturtle-gallery': {
@@ -46,33 +46,30 @@ module.exports = function (grunt) {
         },
       },
     },
-		uglify: {
-			gallery: {
-				options: {
-					sourceMap: true,
-					sourceMapIncludeSources: false,
-				},
-				files: {
-          'js/redturtle-gallery-bundle-compiled.min.js': ['js/bundle-compiled.js'],
-				},
-			},
-		},
+    uglify: {
+      gallery: {
+        options: {
+          sourceMap: true,
+          sourceMapIncludeSources: false,
+        },
+        files: {
+          'js/redturtle-gallery-bundle-compiled.min.js': [
+            'js/bundle-compiled.js',
+          ],
+        },
+      },
+    },
     watch: {
       styles: {
-        files: [
-          'sass/**/*.scss',
-        ],
-        tasks: ['sass', 'postcss']
+        files: ['sass/**/*.scss'],
+        tasks: ['sass', 'postcss'],
       },
       scripts: {
-				files: [
-          './js/integration.js',
-				],
-				tasks: ['requirejs', 'uglify'],
+        files: ['./js/integration.js'],
+        tasks: ['requirejs', 'uglify'],
       },
-    }
+    },
   });
-
 
   // CWD to theme folder
   grunt.file.setBase('./src/redturtle/gallery/browser/static');
