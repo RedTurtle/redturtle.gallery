@@ -2,8 +2,9 @@ graft src/redturtle
 graft docs
 include *.rst
 global-exclude *.pyc
-exclude Gruntfile.js
-exclude package.json
-exclude yarn.lock
 include LICENSE.GPL
 include requirements.txt
+exclude package-lock.json
+include *.js
+include *.json
+include *.lock
