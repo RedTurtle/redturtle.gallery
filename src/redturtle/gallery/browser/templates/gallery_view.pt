@@ -25,16 +25,15 @@
     <div metal:define-slot="inside" tal:replace="structure text">The body</div>
   </div>
 
-  <div class="photo-gallery">
+  <div class="photo-gallery"
+       data-gallery-title="${context/title}">
+
       <metal:listingmacro define-macro="listing"
                           tal:define="portal context/@@plone_portal_state/portal">
       <tal:images tal:repeat="image images">
         <div class="photo-gallery-item"
              tal:define="itemUrl python: image.getURL()">
           <a title="" href="#"
-             class="pat-plone-modal"
-             data-pat-plone-modal="position: 'center middle';
-                                   title: ${context/title}"
              tal:attributes="title image/Description;
                              href string: ${context/absolute_url}/@@gallery_modal?image=${image/UID}">
             <img class="image-thumb"
@@ -53,6 +52,38 @@
         </p>
       </metal:empty>
       </metal:listingmacro>
+
+      <script id="photo-gallery-template" type="text/x-template">
+          <div class="gallery-modal-wrapper">
+              <div class="gallery-modal-header">
+                  <div class="gallery-modal-title">
+                      <span></span>
+                  </div>
+                  <button class="gallery-modal-close"
+                          aria-controls="gallery-modal-wrapper"
+                          aria-label="Esci dalla modale"
+                          title="Esci dalla modale">
+                      <span class="icon" aria-hidden="true">&times;</span>
+                      <span class="sr-only">chiudi</span>
+                  </button>
+              </div>
+              <div class="gallery-slider"
+                   data-slider='{
+                                  "slidesToShow": 1,
+                                  "slidesToScroll": 1
+                                }'>
+              </div>
+          </div>
+      </script>
+
+      <script id="photo-gallery-item-template" type="text/x-template">
+          <figure class="item-image">
+              <img alt="Gallery item" />
+          </figure>
+          <div class="item-title">
+              <span></span>
+          </div>
+      </script>
   </div>
 
 </metal:main_macro>

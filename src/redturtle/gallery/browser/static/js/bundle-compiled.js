@@ -1,6 +1,7 @@
 require(['jquery'], function($) {
   'use strict';
 
+  /*
   function init() {
     var inputs = $('.gallery-modal-wrapper').find(
       'select, input, textarea, button:not(.gallery-modal-close), a'
@@ -58,11 +59,63 @@ require(['jquery'], function($) {
       setTimeout(checkSliderLoaded, 200);
     }
   }
+  */
 
   $(document).on('ready', function() {
-    $('body').on('init', '.gallery-slider', function() {
-      checkSliderLoaded();
-    });
+    // $('body').on('init', '.gallery-slider', function() {
+    //   checkSliderLoaded();
+    // });
+
+    var elements = document.querySelectorAll(
+      '.photo-gallery .photo-gallery-item'
+    );
+
+    var modal = document.createElement('div');
+    modal.classList.add('gallery-modal');
+
+    var contentStructure = document
+      .getElementById('photo-gallery-template')
+      .innerHTML.replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&amp;/g, '&');
+    modal.innerHTML += contentStructure;
+
+    var imgTemplate = document
+      .getElementById('photo-gallery-item-template')
+      .innerHTML.replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&amp;/g, '&');
+
+    var title = document
+      .getElementsByClassName('photo-gallery')[0]
+      .getAttribute('data-gallery-title');
+
+    modal.querySelector('.gallery-modal-title span').textContent = title;
+
+    for (var i = 0; i < elements.length; i++) {
+      var img = elements[i].getElementsByTagName('img')[0];
+
+      var el = document.createElement('div');
+      el.classList.add('gallery-item');
+      el.innerHTML = imgTemplate;
+
+      var elImg = el.getElementsByTagName('img')[0];
+      elImg.src = img.src;
+      elImg.alt = img.alt;
+
+      var elTitle = img.alt;
+      el.querySelector('.item-title span').textContent = elTitle;
+
+      modal.getElementsByClassName('gallery-slider')[0].append(el);
+    }
+
+    modal.getElementsByClassName(
+      'gallery-modal-close'
+    )[0].onclick = function() {
+      modal.classList.remove('open');
+    };
+
+    document.querySelector('body').append(modal);
   });
 });
 

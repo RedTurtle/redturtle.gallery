@@ -26,10 +26,11 @@
                     <tal:images repeat="brain view/contents">
                         <div class="gallery-item"
                              tal:define="title brain/Title;
-                                         imgUrl brain/absolute_url">
+                                         imgUrl brain/absolute_url;
+                                         scales context/@@images">
                             <figure class="item-image">
-                                <img tal:attributes="alt title;
-                                                     src imgUrl">
+                                <img tal:attributes="alt title; src imgUrl"
+                                     tal:replace="structure python: scales.tag('image', scale='big')">
                             </figure>
                             <div class="item-title">
                                 <span tal:content="title">title</span>
