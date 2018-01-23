@@ -13,7 +13,7 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="redturtle.gallery"
+      title="RedTurtle Gallery"
       directory="profiles/default"
       description="Installs the redturtle.gallery add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
@@ -22,7 +22,7 @@
 
   <genericsetup:registerProfile
       name="uninstall"
-      title="redturtle.gallery (uninstall)"
+      title="RedTurtle Gallery (uninstall)"
       directory="profiles/uninstall"
       description="Uninstalls the redturtle.gallery add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
