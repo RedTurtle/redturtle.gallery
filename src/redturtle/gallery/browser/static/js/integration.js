@@ -64,10 +64,18 @@ require([
   }
   */
 
-  function createModal(callback) {
+  function createModal(clickedEl, callback) {
     var elements = document.querySelectorAll(
       '.photo-gallery .photo-gallery-item'
     );
+
+    var elementsSrc = [];
+    for (var i = 0; i < elements.length; i++) {
+      elementsSrc.push(elements[i].getElementsByTagName('img')[0].src);
+    }
+
+    var initialSlide = elementsSrc.indexOf(clickedEl.src);
+    if (initialSlide < 0) initialSlide = 0;
 
     var modal = document.createElement('div');
     modal.classList.add('gallery-modal');
@@ -115,33 +123,40 @@ require([
       modal.remove();
     };
 
+    $(document).on('click', function(e) {
+      if (!$(e.target).closest('.gallery-modal-wrapper').length) {
+        modal.remove();
+      }
+    });
+
     document.querySelector('body').append(modal);
 
-    if (callback) callback(modal);
+    if (callback) callback(initialSlide);
   }
 
-  function createSlider(selector) {
+  function createSlider(selector, initialSlide) {
     $(selector).slick({
       dots: true,
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: true,
-      responsive: true,
       accessibility: true,
       adaptiveHeight: true,
+      initialSlide: initialSlide,
     });
   }
 
   $(document).on('ready', function() {
-    // $('body').on('init', '.gallery-slider', function() {
-    //   checkSliderLoaded();
-    // });
+    $('body').on('init', '.gallery-slider', function() {
+      // checkSliderLoaded();
+    });
 
     $('.photo-gallery-item a').on('click', function(e) {
       e.preventDefault();
+      e.stopPropagation();
 
-      createModal(function() {
-        createSlider('.gallery-slider');
+      createModal(e.target, function(initialSlide) {
+        createSlider('.gallery-slider', initialSlide);
       });
     });
   });
