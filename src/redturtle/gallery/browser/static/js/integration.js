@@ -121,7 +121,7 @@ require([
       var elTitle = img.alt;
       el.querySelector('.item-title span').textContent = elTitle;
 
-      modal.getElementsByClassName('gallery-slider')[0].append(el);
+      modal.getElementsByClassName('gallery-slider')[0].appendChild(el);
     }
 
     var initialSlide = elementsSrc.indexOf(clickedEl.src);
@@ -130,16 +130,16 @@ require([
     modal.getElementsByClassName(
       'gallery-modal-close'
     )[0].onclick = function() {
-      modal.remove();
+      $(modal).remove();
     };
 
     $(document).on('click', function(e) {
       if (!$(e.target).closest('.gallery-modal-wrapper').length) {
-        modal.remove();
+        $(modal).remove();
       }
     });
 
-    document.querySelector('body').append(modal);
+    document.querySelector('body').appendChild(modal);
 
     if (callback) callback(initialSlide);
   }
