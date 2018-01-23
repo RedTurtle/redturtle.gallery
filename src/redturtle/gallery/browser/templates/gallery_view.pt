@@ -34,8 +34,7 @@
         <div class="photo-gallery-item"
              tal:define="itemUrl python: image.getURL()">
           <a title="" href="#"
-             tal:attributes="title image/Description;
-                             href string: ${context/absolute_url}/@@gallery_modal?image=${image/UID}">
+             tal:attributes="title image/Description">
             <img class="image-thumb"
                  tal:attributes="src python: itemUrl;
                                  title image/Description;
@@ -54,7 +53,7 @@
       </metal:listingmacro>
 
       <script id="photo-gallery-template" type="text/x-template">
-          <div class="gallery-modal-wrapper">
+          <div class="gallery-modal-wrapper" tabIndex="-1">
               <div class="gallery-modal-header">
                   <div class="gallery-modal-title">
                       <span></span>
@@ -67,12 +66,7 @@
                       <span class="sr-only">chiudi</span>
                   </button>
               </div>
-              <div class="gallery-slider"
-                   data-slider='{
-                                  "slidesToShow": 1,
-                                  "slidesToScroll": 1
-                                }'>
-              </div>
+              <div class="gallery-slider"></div>
           </div>
       </script>
 

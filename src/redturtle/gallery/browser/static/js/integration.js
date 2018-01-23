@@ -1,4 +1,7 @@
-require(['jquery'], function($) {
+require([
+  'jquery',
+  'slick.min'
+], function($) {
   'use strict';
 
   /*
@@ -61,11 +64,7 @@ require(['jquery'], function($) {
   }
   */
 
-  $(document).on('ready', function() {
-    // $('body').on('init', '.gallery-slider', function() {
-    //   checkSliderLoaded();
-    // });
-
+  function createModal(callback) {
     var elements = document.querySelectorAll(
       '.photo-gallery .photo-gallery-item'
     );
@@ -112,9 +111,37 @@ require(['jquery'], function($) {
     modal.getElementsByClassName(
       'gallery-modal-close'
     )[0].onclick = function() {
-      modal.classList.remove('open');
+      modal.remove();
     };
 
     document.querySelector('body').append(modal);
+
+    if (callback) callback(modal);
+  }
+
+  function createSlider(selector) {
+    $(selector).slick({
+      dots: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      responsive: true,
+      accessibility: true,
+      adaptiveHeight: true,
+    });
+  }
+
+  $(document).on('ready', function() {
+    // $('body').on('init', '.gallery-slider', function() {
+    //   checkSliderLoaded();
+    // });
+
+    $('.photo-gallery-item a').on('click', function(e) {
+      e.preventDefault();
+
+      createModal(function() {
+        createSlider('.gallery-slider');
+      });
+    });
   });
 });
