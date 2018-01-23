@@ -73,6 +73,7 @@ require([
 
     var modal = document.createElement('div');
     modal.classList.add('gallery-modal');
+    modal.setAttribute('role', 'dialog');
 
     var contentStructure = document
       .getElementById('photo-gallery-template')

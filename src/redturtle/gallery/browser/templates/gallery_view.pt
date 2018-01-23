@@ -53,7 +53,7 @@
       </metal:listingmacro>
 
       <script id="photo-gallery-template" type="text/x-template">
-          <div class="gallery-modal-wrapper" tabIndex="-1">
+          <div class="gallery-modal-wrapper" tabIndex="0">
               <div class="gallery-modal-header">
                   <div class="gallery-modal-title">
                       <span></span>
