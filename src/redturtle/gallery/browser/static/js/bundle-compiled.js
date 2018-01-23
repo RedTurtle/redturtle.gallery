@@ -6,14 +6,19 @@ require([
 ], function($) {
   'use strict';
 
-  /*
-  function init() {
+  function modalAccessibility() {
     var inputs = $('.gallery-modal-wrapper').find(
       'select, input, textarea, button:not(.gallery-modal-close), a'
     );
     var firstInput = inputs.first();
     var lastInput = inputs.last();
     var closeInput = $('.gallery-modal-close').first();
+
+    var dots = document.querySelector('.gallery-modal .slick-dots');
+
+    if (dots) {
+      $(dots).attr('aria-hidden', true);
+    }
 
     lastInput.on('keydown', function(e) {
       if (e.which === 9) {
@@ -33,10 +38,6 @@ require([
       }
     });
 
-    closeInput.on('click', function() {
-      $('.plone-modal-close').click();
-    });
-
     closeInput.on('keydown', function(e) {
       if (e.which === 9) {
         e.preventDefault();
@@ -49,52 +50,49 @@ require([
       }
     });
 
+    $(document).on('keydown', function(e) {
+      if (e.which === 27) {
+        $('.gallery-modal').remove();
+      }
+    })
+
     setTimeout(function() {
       $('.gallery-slider .gallery-item.slick-active').focus();
-    }, 500);
+    }, 0);
   }
 
-  function checkSliderLoaded() {
+  function checkSliderLoaded(slider, callback) {
     if (
-      $('.gallery-slider').length &&
-      $('.gallery-slider').hasClass('slick-initialized')
+      $(slider).length &&
+      $(slider).hasClass('slick-initialized')
     ) {
-      init();
+      callback();
     } else {
       setTimeout(checkSliderLoaded, 200);
     }
   }
-  */
+
+  function getTemplate(selector) {
+    return document
+      .getElementById(selector)
+      .innerHTML.replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&amp;/g, '&');
+  }
 
   function createModal(clickedEl, callback) {
     var elements = document.querySelectorAll(
       '.photo-gallery .photo-gallery-item'
     );
 
-    var elementsSrc = [];
-    for (var i = 0; i < elements.length; i++) {
-      elementsSrc.push(elements[i].getElementsByTagName('img')[0].src);
-    }
-
-    var initialSlide = elementsSrc.indexOf(clickedEl.src);
-    if (initialSlide < 0) initialSlide = 0;
-
     var modal = document.createElement('div');
     modal.classList.add('gallery-modal');
     modal.setAttribute('role', 'dialog');
 
-    var contentStructure = document
-      .getElementById('photo-gallery-template')
-      .innerHTML.replace(/&lt;/g, '<')
-      .replace(/&gt;/g, '>')
-      .replace(/&amp;/g, '&');
+    var contentStructure = getTemplate('photo-gallery-template');
     modal.innerHTML += contentStructure;
 
-    var imgTemplate = document
-      .getElementById('photo-gallery-item-template')
-      .innerHTML.replace(/&lt;/g, '<')
-      .replace(/&gt;/g, '>')
-      .replace(/&amp;/g, '&');
+    var imgTemplate = getTemplate('photo-gallery-item-template');
 
     var title = document
       .getElementsByClassName('photo-gallery')[0]
@@ -102,8 +100,11 @@ require([
 
     modal.querySelector('.gallery-modal-title span').textContent = title;
 
+    var elementsSrc = [];
+
     for (var i = 0; i < elements.length; i++) {
       var img = elements[i].getElementsByTagName('img')[0];
+      elementsSrc.push(elements[i].getElementsByTagName('img')[0].src);
 
       var el = document.createElement('div');
       el.classList.add('gallery-item');
@@ -118,6 +119,9 @@ require([
 
       modal.getElementsByClassName('gallery-slider')[0].append(el);
     }
+
+    var initialSlide = elementsSrc.indexOf(clickedEl.src);
+    if (initialSlide < 0) initialSlide = 0;
 
     modal.getElementsByClassName(
       'gallery-modal-close'
@@ -137,6 +141,12 @@ require([
   }
 
   function createSlider(selector, initialSlide) {
+    $(document).on('init', selector, function() {
+      checkSliderLoaded(selector, function() {
+        modalAccessibility();
+      });
+    });
+
     $(selector).slick({
       dots: true,
       slidesToShow: 1,
@@ -148,18 +158,12 @@ require([
     });
   }
 
-  $(document).on('ready', function() {
-    $('body').on('init', '.gallery-slider', function() {
-      // checkSliderLoaded();
-    });
+  $(document).on('click', '.photo-gallery-item a', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
 
-    $('.photo-gallery-item a').on('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-
-      createModal(e.target, function(initialSlide) {
-        createSlider('.gallery-slider', initialSlide);
-      });
+    createModal(e.target, function(initialSlide) {
+      createSlider('.gallery-slider', initialSlide);
     });
   });
 });

@@ -30,17 +30,16 @@
 
     .gallery-modal-wrapper {
         position: absolute;
-        top: 40px;
+        top: 15vh;
         left: 10%;
         right: 10%;
-        bottom: 40px;
-        width: 80%;
+        bottom: 15vh;
         max-width: 1024px;
         padding: 10px 20px;
         margin: auto;
         background: #FFF;
         border: 1px solid #999;
-        box-shadow: 0 0 20px 2px #666;
+        box-shadow: 0 0 20px 0 #999;
         border-radius: 4px;
         overflow: auto;
 
@@ -48,6 +47,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            height: 3.5em;
+            border-bottom: 1px solid #EEE;
 
             .gallery-modal-title {
                 font-size: 1.2em;
@@ -56,22 +57,25 @@
 
         .gallery-slider {
             position: relative;
-            padding: 15px 0 5px;
+            padding: 20px 0 0;
+            height: calc(100% - 3.5em);
 
             .slick-list {
                 text-align: center;
                 width: 80%;
                 margin: auto;
+                height: calc(100% - 3em) !important;
             }
 
             ul.slick-dots {
                 width: 100%;
-                padding: 15px 0 0;
+                height: 3em;
+                padding: 0;
                 margin: 0;
                 list-style: none;
                 display: inline-flex;
-                flex-flow: row nowrap;
                 justify-content: center;
+                align-items: center;
 
                 li {
                     padding: 0 5px;
@@ -96,7 +100,7 @@
 
             .slick-track {
                 display: flex;
-                flex-flow: row nowrap;
+                height: 100%;
             }
 
             .gallery-item {
