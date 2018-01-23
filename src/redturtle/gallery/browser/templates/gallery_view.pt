@@ -36,7 +36,7 @@
           <a title="" href="#"
              tal:attributes="title image/Description">
             <img class="image-thumb"
-                 tal:attributes="src python: itemUrl;
+                 tal:attributes="src python: itemUrl + '/@@images/image/galleryslider';
                                  title image/Description;
                                  alt image/Title" />
           </a>
