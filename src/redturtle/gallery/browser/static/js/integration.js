@@ -1,7 +1,4 @@
-require([
-  'jquery',
-  'slick.min'
-], function($) {
+require(['jquery', 'slick.min'], function($) {
   'use strict';
 
   function modalAccessibility() {
@@ -12,10 +9,10 @@ require([
     var lastInput = inputs.last();
     var closeInput = $('.gallery-modal-close').first();
 
-    var dots = document.querySelector('.gallery-modal .slick-dots');
+    var dots = $('.gallery-modal .slick-dots');
 
-    if (dots) {
-      $(dots).attr('aria-hidden', true);
+    if (dots.length) {
+      dots.attr('aria-hidden', true);
     }
 
     lastInput.on('keydown', function(e) {
@@ -51,14 +48,12 @@ require([
     $(document).on('keydown', function(e) {
       if (e.which === 27) {
         $('.gallery-modal').remove();
-      }
-      else if (e.which === 37) {
+      } else if (e.which === 37) {
         $('.slick-prev').click();
-      }
-      else if (e.which === 39) {
+      } else if (e.which === 39) {
         $('.slick-next').click();
       }
-    })
+    });
 
     setTimeout(function() {
       $('.gallery-slider .gallery-item.slick-active').focus();
@@ -66,10 +61,7 @@ require([
   }
 
   function checkSliderLoaded(slider, callback) {
-    if (
-      $(slider).length &&
-      $(slider).hasClass('slick-initialized')
-    ) {
+    if ($(slider).length && $(slider).hasClass('slick-initialized')) {
       callback();
     } else {
       setTimeout(checkSliderLoaded, 200);
@@ -77,61 +69,55 @@ require([
   }
 
   function getTemplate(selector) {
-    return document
-      .getElementById(selector)
-      .innerHTML.replace(/&lt;/g, '<')
+    return $('#' + selector)
+      .html()
+      .replace(/&lt;/g, '<')
       .replace(/&gt;/g, '>')
       .replace(/&amp;/g, '&');
   }
 
   function createModal(clickedEl, callback) {
-    var elements = document.querySelectorAll(
-      '.photo-gallery .photo-gallery-item'
-    );
+    var elements = $('.photo-gallery .photo-gallery-item');
 
-    var modal = document.createElement('div');
-    modal.classList.add('gallery-modal');
-    modal.setAttribute('role', 'dialog');
+    var modal = $('<div/>');
+    modal.addClass('gallery-modal');
+    modal.attr('role', 'dialog');
 
     var contentStructure = getTemplate('photo-gallery-template');
-    modal.innerHTML += contentStructure;
+    modal.html(contentStructure);
 
     var imgTemplate = getTemplate('photo-gallery-item-template');
 
-    var title = document
-      .getElementsByClassName('photo-gallery')[0]
-      .getAttribute('data-gallery-title');
+    var title = $('.photo-gallery').attr('data-gallery-title');
 
-    modal.querySelector('.gallery-modal-title span').textContent = title;
+    modal.find('.gallery-modal-title span').text(title);
 
     var elementsSrc = [];
 
     for (var i = 0; i < elements.length; i++) {
-      var img = elements[i].getElementsByTagName('img')[0];
-      elementsSrc.push(elements[i].getElementsByTagName('img')[0].src);
+      var img = elements.find('img')[i];
+      elementsSrc.push(elements.find('img')[i].src);
 
-      var el = document.createElement('div');
-      el.classList.add('gallery-item');
-      el.innerHTML = imgTemplate;
+      var el = $('<div/>');
+      el.addClass('gallery-item');
+      el.html(imgTemplate);
 
-      var elImg = el.getElementsByTagName('img')[0];
+      var elImg = el.find('img')[0];
       elImg.src = img.src;
       elImg.alt = img.alt;
 
       var elTitle = img.alt;
-      el.querySelector('.item-title span').textContent = elTitle;
+      el.find('.item-title span').text(elTitle);
 
-      modal.getElementsByClassName('gallery-slider')[0].appendChild(el);
+      modal.find('.gallery-slider').append(el);
     }
 
     var initialSlide = elementsSrc.indexOf(clickedEl.src);
     if (initialSlide < 0) initialSlide = 0;
 
-    modal.getElementsByClassName(
-      'gallery-modal-close'
-    )[0].onclick = function() {
-      $(modal).remove();
-    };
+    modal.find('.gallery-modal-close').on('click', function() {
+      modal.remove();
+    });
 
     $(document).on('click', function(e) {
       if (!$(e.target).closest('.gallery-modal-wrapper').length) {
@@ -139,7 +125,7 @@ require([
       }
     });
 
-    document.querySelector('body').appendChild(modal);
+    $('body').append(modal);
 
     if (callback) callback(initialSlide);
   }
