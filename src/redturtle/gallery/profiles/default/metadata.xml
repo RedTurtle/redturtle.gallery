@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-  <version>1003</version>
+  <version>1004</version>
   <dependencies>
-     <dependency>profile-redturtle.patterns.slider:default</dependency>
      <dependency>profile-plone.app.imaging:default</dependency>
   </dependencies>
 </metadata>
