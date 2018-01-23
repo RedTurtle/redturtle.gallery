@@ -55,7 +55,7 @@ require([
       else if (e.which === 37) {
         $('.slick-prev').click();
       }
-      else if (e.which === 97) {
+      else if (e.which === 39) {
         $('.slick-next').click();
       }
     })
