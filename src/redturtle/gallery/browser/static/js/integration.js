@@ -52,6 +52,12 @@ require([
       if (e.which === 27) {
         $('.gallery-modal').remove();
       }
+      else if (e.which === 37) {
+        $('.slick-prev').click();
+      }
+      else if (e.which === 97) {
+        $('.slick-next').click();
+      }
     })
 
     setTimeout(function() {
