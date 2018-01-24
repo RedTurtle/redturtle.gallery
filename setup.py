@@ -41,7 +41,6 @@ setup(
         'plone.api',
         'Products.GenericSetup>=1.8.2',
         'setuptools',
-        'redturtle.patterns.slider',
         'plone.app.imaging',
     ],
     extras_require={

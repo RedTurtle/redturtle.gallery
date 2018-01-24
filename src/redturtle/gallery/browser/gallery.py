@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from plone.app.contenttypes.browser.folder import FolderView
 from plone.app.contenttypes.browser.collection import CollectionView
-from plone.app.contenttypes.interfaces import ICollection
 from Products.CMFPlone.resources import add_bundle_on_request
 from Products.Five.browser import BrowserView
 
@@ -21,33 +20,3 @@ class GalleryCollectionView(CollectionView, GalleryView):
     """
     def __call__(self):
         return super(GalleryCollectionView, self).__call__()
-
-
-class GalleryModal(BrowserView):
-    """
-    Gallery modal for slick carousel
-    """
-
-    contents = []
-    itemIndex = -1
-
-    def __init__(self, context, request):
-        self.context = context
-        self.request = request
-        self.getContents()
-        self.getIndex()
-
-    def getContents(self):
-        if ICollection.providedBy(self.context):
-            self.contents = [x.getObject() for x in self.context.queryCatalog(
-                                {'portal_type': 'Image'}
-                            )]
-        else:
-            self.contents = self.context.listFolderContents(
-                                contentFilter={'portal_type': 'Image'}
-                            )
-
-    def getIndex(self):
-        self.itemIndex = [x.UID() for x in self.contents].index(
-                            self.request.form['image']
-                         )

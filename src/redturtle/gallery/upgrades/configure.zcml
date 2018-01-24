@@ -30,4 +30,13 @@
     handler=".upgrades.import_types_registry"
   />
 
+  <genericsetup:upgradeStep
+    source="1003"
+    destination="1004"
+    profile="redturtle.gallery:default"
+    title="Import plone registry"
+    description="Added image scaling"
+    handler=".upgrades.import_records_registry"
+  />
+
 </configure>

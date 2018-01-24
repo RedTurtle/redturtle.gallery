@@ -23,4 +23,10 @@
     <value key="compile">True</value>
   </records>
 
+  <record name="plone.allowed_sizes" interface="Products.CMFPlone.interfaces.controlpanel.IImagingSchema" field="allowed_sizes">
+    <value purge="false">
+      <element>galleryslider 1067:600</element>
+    </value>
+  </record>
+
 </registry>
