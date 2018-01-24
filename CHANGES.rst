@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.1 (unreleased)
+2.0.0 (2018-01-24)
 ------------------
 
 - Rewritten modal without patterns [nzambello]
