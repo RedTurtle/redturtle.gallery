@@ -49,9 +49,9 @@ require(['jquery', 'slick.min'], function($) {
       if (e.which === 27) {
         $('.gallery-modal').remove();
       } else if (e.which === 37) {
-        $('.slick-prev').click();
+        $('.gallery-slider').slick('slickPrev');
       } else if (e.which === 39) {
-        $('.slick-next').click();
+        $('.gallery-slider').slick('slickNext');
       }
     });
 
@@ -79,38 +79,34 @@ require(['jquery', 'slick.min'], function($) {
   function createModal(clickedEl, callback) {
     var elements = $('.photo-gallery .photo-gallery-item');
 
-    var modal = $('<div/>');
-    modal.addClass('gallery-modal');
-    modal.attr('role', 'dialog');
-
-    var contentStructure = getTemplate('photo-gallery-template');
-    modal.html(contentStructure);
-
-    var imgTemplate = getTemplate('photo-gallery-item-template');
+    var modal = $('<div class="gallery-modal" role="dialog" />');
+    modal.html(getTemplate('photo-gallery-template'));
 
     var title = $('.photo-gallery').attr('data-gallery-title');
-
     modal.find('.gallery-modal-title span').text(title);
 
+    var imgTemplate = getTemplate('photo-gallery-item-template');
     var elementsSrc = [];
 
-    for (var i = 0; i < elements.length; i++) {
-      var img = elements.find('img')[i];
-      elementsSrc.push(elements.find('img')[i].src);
+    elements.each(function() {
+      var $element = $(this);
+      var $img = $element.find('img');
+      elementsSrc.push($img.attr('src'));
 
-      var el = $('<div/>');
-      el.addClass('gallery-item');
+      var el = $('<div class="gallery-item" />');
       el.html(imgTemplate);
 
-      var elImg = el.find('img')[0];
-      elImg.src = img.src;
-      elImg.alt = img.alt;
+      var $elImg = el.find('img');
+      $elImg.attr({
+        src: $img.attr('src'),
+        alt: $img.attr('alt'),
+      });
 
-      var elTitle = img.alt;
+      var elTitle = $img.attr('alt');
       el.find('.item-title span').text(elTitle);
 
       modal.find('.gallery-slider').append(el);
-    }
+    });
 
     var initialSlide = elementsSrc.indexOf(clickedEl.src);
     if (initialSlide < 0) initialSlide = 0;
