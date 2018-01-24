@@ -5,7 +5,7 @@ Changelog
 1.0.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Rewritten modal without patterns [nzambello]
 
 
 1.0.0 (2018-01-11)
