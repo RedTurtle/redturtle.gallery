@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.1.0 (unreleased)
+2.0.0 (2018-01-24)
 ------------------
 
 - [Breaking change] removed js patterns: modal made in vanilla js and imported slick manually [nzambello]
