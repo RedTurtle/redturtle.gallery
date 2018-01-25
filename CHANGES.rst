@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-2.0.1 (unreleased)
+2.0.1 (2018-01-25)
 ------------------
 
 - Republish 2.x version, because 2.0.0 somehow had a missing commit [pnicolli]
