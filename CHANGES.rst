@@ -5,7 +5,7 @@ Changelog
 2.0.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Republish 2.x version, because 2.0.0 somehow had a missing commit [pnicolli]
 
 
 2.0.0 (2018-01-24)
