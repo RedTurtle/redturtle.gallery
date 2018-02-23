@@ -14,6 +14,7 @@
   <records prefix="plone.bundles/redturtle-gallery-bundle"
            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
     <value key="enabled">False</value>
+    <value key="depends">collective-slick</value>
     <value key="resources" purge="false">
       <element>redturtle-gallery</element>
     </value>

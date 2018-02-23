@@ -5,7 +5,7 @@ Changelog
 2.0.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Removed internal slick library code and added collective.slick dependency [pnicolli]
 
 
 2.0.1 (2018-01-25)

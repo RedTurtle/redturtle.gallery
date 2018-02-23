@@ -37,11 +37,11 @@ module.exports = function(grunt) {
           preserveLicenseComments: false,
           paths: {
             jquery: 'empty:',
-            'slick.min': 'js/slick/slick.min',
+            'collective-slick': 'empty:',
           },
           wrapShim: true,
           name: 'js/integration.js',
-          exclude: ['jquery'],
+          exclude: ['jquery', 'collective-slick'],
           out: 'js/bundle-compiled.js',
           optimize: 'none',
         },

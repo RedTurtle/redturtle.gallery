@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from plone import api
+from plone.app.upgrade.utils import installOrReinstallProduct
 from redturtle.gallery import logger
 
 
@@ -59,3 +60,11 @@ def import_records_registry(context):
     logger.info('Importing records and settings configuration for' +
                 'redturtle.gallery')
     import_registry('plone.app.registry')
+
+
+def to_1005(context):
+    'Install collective.slick'
+    installOrReinstallProduct(
+        api.portal.get(),
+        'collective.slick',
+    )

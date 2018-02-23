@@ -15,7 +15,7 @@ long_description = '\n\n'.join([
 setup(
     name='redturtle.gallery',
     version='2.0.2.dev0',
-    description="Plone addon that adds a gallery view with a carousel made with slick.",
+    description="Plone addon that adds a gallery view with a carousel made with slick.",  # noqa
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
@@ -38,6 +38,7 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
+        'collective.slick',
         'plone.api',
         'Products.GenericSetup>=1.8.2',
         'setuptools',

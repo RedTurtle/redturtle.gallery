@@ -10,6 +10,7 @@ class GalleryView(FolderView, BrowserView):
     Gallery view
     """
     def __call__(self):
+        add_bundle_on_request(self.request, 'collective-slick')
         add_bundle_on_request(self.request, 'redturtle-gallery-bundle')
         return super(GalleryView, self).__call__()
 
