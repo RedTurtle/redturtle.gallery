@@ -39,4 +39,13 @@
     handler=".upgrades.import_records_registry"
   />
 
+  <genericsetup:upgradeStep
+    source="1004"
+    destination="1005"
+    profile="redturtle.gallery:default"
+    title="Install collective.slick dependency"
+    description="Moved slick dependencies outside of the addon"
+    handler=".upgrades.to_1005"
+  />
+
 </configure>
