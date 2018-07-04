@@ -1,4 +1,4 @@
-require(['jquery', 'collective-slick'], function($) {
+require(['jquery'], function($) {
   'use strict';
 
   function modalAccessibility() {

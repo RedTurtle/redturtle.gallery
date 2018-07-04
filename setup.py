@@ -38,7 +38,7 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'collective.slick',
+        'collective.slick>=0.2.0',
         'plone.api',
         'Products.GenericSetup>=1.8.2',
         'setuptools',

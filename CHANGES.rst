@@ -5,7 +5,8 @@ Changelog
 2.0.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fixed collective-slick import [pnicolli]
+- Pinned collective-slick >= 0.2.0 [pnicolli]
 
 
 2.0.2 (2018-02-26)
