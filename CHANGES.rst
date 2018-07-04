@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-2.0.3 (unreleased)
+2.0.3 (2018-07-04)
 ------------------
 
 - Fixed collective-slick import [pnicolli]
