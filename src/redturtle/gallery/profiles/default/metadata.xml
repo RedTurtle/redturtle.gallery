@@ -2,7 +2,6 @@
 <metadata>
   <version>1005</version>
   <dependencies>
-     <dependency>profile-plone.app.imaging:default</dependency>
      <dependency>profile-collective.slick:default</dependency>
   </dependencies>
 </metadata>
