@@ -106,7 +106,12 @@ require(['jquery'], function($) {
       el.find('.item-title h3').text(elTitle);
 
       var elDescription = $img.attr('title');
-      el.find('.item-title p').text(elDescription);
+
+      if (elDescription && elDescription.length > 0) {
+        el.find('.item-title p').text(elDescription);
+      } else {
+        el.find('.item-title p').remove();
+      }
 
       modal.find('.gallery-slider').append(el);
     });
