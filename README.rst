@@ -64,7 +64,7 @@ Dependencies
 This product has been tested on Plone 5.1
 
 
-This add-on requires ``plone.app.images``.
+This add-on requires ``plone.app.imaging``.
 
 
 Credits
@@ -81,6 +81,6 @@ Authors
 
 This product was developed by RedTurtle Technology team.
 
-.. image:: http://www.redturtle.it/redturtle_banner.png
+.. image:: https://www.redturtle.it/redturtle_banner.png
    :alt: RedTurtle Technology Site
-   :target: http://www.redturtle.it/
+   :target: https://www.redturtle.it/
