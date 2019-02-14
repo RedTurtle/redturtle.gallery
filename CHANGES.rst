@@ -5,7 +5,7 @@ Changelog
 2.0.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Added description in modal view [nzambello]
 
 
 2.0.3 (2018-07-04)
