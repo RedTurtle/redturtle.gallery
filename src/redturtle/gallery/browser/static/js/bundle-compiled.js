@@ -103,7 +103,10 @@ require(['jquery'], function($) {
       });
 
       var elTitle = $img.attr('alt');
-      el.find('.item-title span').text(elTitle);
+      el.find('.item-title h3').text(elTitle);
+
+      var elDescription = $img.attr('title');
+      el.find('.item-title p').text(elDescription);
 
       modal.find('.gallery-slider').append(el);
     });

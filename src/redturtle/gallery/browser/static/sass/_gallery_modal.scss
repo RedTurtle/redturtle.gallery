@@ -15,7 +15,7 @@
         background: none;
         color: #000;
         box-shadow: none;
-        border-color: #CCC;
+        border-color: #ccc;
     }
 }
 
@@ -37,7 +37,7 @@
         max-width: 1024px;
         padding: 10px 20px;
         margin: auto;
-        background: #FFF;
+        background: #fff;
         border: 1px solid #999;
         box-shadow: 0 0 20px 0 #999;
         border-radius: 4px;
@@ -48,7 +48,7 @@
             align-items: center;
             justify-content: space-between;
             height: 3.5em;
-            border-bottom: 1px solid #EEE;
+            border-bottom: 1px solid #eee;
 
             .gallery-modal-title {
                 font-size: 1.2em;
@@ -126,18 +126,32 @@
                 .item-title {
                     position: absolute;
                     left: 0;
-                    bottom: 0;
+                    bottom: 1rem;
                     width: 100%;
                     text-align: center;
                     word-wrap: break-word;
 
-                    span {
+                    .item-wrapper {
                         font-weight: 600;
                         font-size: 1.2em;
-                        padding: 10px 20px;
+                        padding: 1.5rem 2rem;
                         background: rgba(255, 255, 255, 0.67);
                         border-radius: 5px;
                         line-height: 3em;
+                        max-width: 500px;
+                        margin: auto;
+
+                        p {
+                            margin: 0;
+                            line-height: 3rem;
+                            font-size: 1.5rem;
+                            font-weight: 400;
+                        }
+
+                        h3 {
+                            margin-bottom: 0.5rem;
+                            margin-top: 0;
+                        }
                     }
                 }
 
@@ -175,7 +189,7 @@
                 text-indent: 1000px;
                 border-radius: 100%;
                 z-index: 100;
-                background-color: #FFF;
+                background-color: #fff;
                 background-image: url('++plone++redturtle.gallery/arrow.svg');
                 background-position: center;
                 background-repeat: no-repeat;

@@ -75,7 +75,10 @@
               <img alt="Gallery item" />
           </figure>
           <div class="item-title">
-              <span></span>
+              <div class="item-wrapper">
+                  <h3></h3>
+                  <p></p>
+              </div>
           </div>
       </script>
   </div>
