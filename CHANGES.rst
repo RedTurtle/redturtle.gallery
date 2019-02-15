@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-2.0.4 (unreleased)
+2.1.0 (2019-02-15)
 ------------------
 
 - Added description in modal view [nzambello]
