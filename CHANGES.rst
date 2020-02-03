@@ -5,7 +5,8 @@ Changelog
 2.1.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- gallery modal: leaved space for title, handled imgs width/height to fit anyway and be always visible
+  [nzambello]
 
 
 2.1.0 (2019-02-15)
