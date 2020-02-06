@@ -55,6 +55,19 @@
             }
         }
 
+        @media (max-width: 991px) {
+            top: 10vh;
+            bottom: 10vh;
+
+            .gallery-modal-header {
+                height: auto;
+
+                .gallery-modal-title {
+                    font-size: 1em;
+                }
+            }
+        }
+
         .gallery-slider {
             position: relative;
             padding: 20px 0 0;
@@ -176,6 +189,18 @@
                         overflow: hidden;
                         position: static;
                         padding-top: 15px;
+
+                        .item-wrapper {
+                            padding: 1rem;
+
+                            h3 {
+                                font-size: 1rem;
+                            }
+
+                            p {
+                                display: none;
+                            }
+                        }
 
                         span {
                             font-size: 3vw;
