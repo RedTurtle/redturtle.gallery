@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
 from plone import api
-from redturtle.gallery.testing import REDTURTLE_GALLERY_INTEGRATION_TESTING  # noqa
+from redturtle.gallery.testing import (
+    REDTURTLE_GALLERY_INTEGRATION_TESTING,
+)  # noqa
 
 import unittest
 
@@ -18,17 +20,14 @@ class TestSetup(unittest.TestCase):
 
     def test_product_installed(self):
         """Test if redturtle.gallery is installed."""
-        self.assertTrue(self.installer.isProductInstalled(
-            'redturtle.gallery'))
+        self.assertTrue(self.installer.isProductInstalled('redturtle.gallery'))
 
     def test_browserlayer(self):
         """Test that IRedturtleGalleryLayer is registered."""
-        from redturtle.gallery.interfaces import (
-            IRedturtleGalleryLayer)
+        from redturtle.gallery.interfaces import IRedturtleGalleryLayer
         from plone.browserlayer import utils
-        self.assertIn(
-            IRedturtleGalleryLayer,
-            utils.registered_layers())
+
+        self.assertIn(IRedturtleGalleryLayer, utils.registered_layers())
 
 
 class TestUninstall(unittest.TestCase):
@@ -42,14 +41,13 @@ class TestUninstall(unittest.TestCase):
 
     def test_product_uninstalled(self):
         """Test if redturtle.gallery is cleanly uninstalled."""
-        self.assertFalse(self.installer.isProductInstalled(
-            'redturtle.gallery'))
+        self.assertFalse(
+            self.installer.isProductInstalled('redturtle.gallery')
+        )
 
     def test_browserlayer_removed(self):
         """Test that IRedturtleGalleryLayer is removed."""
-        from redturtle.gallery.interfaces import \
-            IRedturtleGalleryLayer
+        from redturtle.gallery.interfaces import IRedturtleGalleryLayer
         from plone.browserlayer import utils
-        self.assertNotIn(
-           IRedturtleGalleryLayer,
-           utils.registered_layers())
+
+        self.assertNotIn(IRedturtleGalleryLayer, utils.registered_layers())
