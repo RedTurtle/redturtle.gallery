@@ -5,7 +5,10 @@ Changelog
 2.1.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Remove p.a.imaging unneeded dependency.
+  [cekk]
+- Python 3 compatibility.
+  [cekk]
 
 
 2.1.0 (2019-02-15)
