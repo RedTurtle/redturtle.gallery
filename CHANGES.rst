@@ -2,11 +2,20 @@ Changelog
 =========
 
 
-2.1.1 (unreleased)
+2.2.1 (unreleased)
 ------------------
 
 - gallery modal: leaved space for title, handled imgs width/height to fit anyway and be always visible
   [nzambello]
+
+
+2.2.0 (2020-03-06)
+------------------
+
+- Remove p.a.imaging unneeded dependency.
+  [cekk]
+- Python 3 compatibility.
+  [cekk]
 
 
 2.1.0 (2019-02-15)

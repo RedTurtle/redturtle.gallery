@@ -8,3 +8,5 @@ exclude package-lock.json
 include *.js
 include *.json
 include *.lock
+include *.py
+include *.txt

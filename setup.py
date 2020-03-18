@@ -5,16 +5,18 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-long_description = '\n\n'.join([
-    open('README.rst').read(),
-    open('CONTRIBUTORS.rst').read(),
-    open('CHANGES.rst').read(),
-])
+long_description = '\n\n'.join(
+    [
+        open('README.rst').read(),
+        open('CONTRIBUTORS.rst').read(),
+        open('CHANGES.rst').read(),
+    ]
+)
 
 
 setup(
     name='redturtle.gallery',
-    version='2.1.1.dev0',
+    version='2.2.1.dev0',
     description="Plone addon that adds a gallery view with a carousel made with slick.",  # noqa
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
@@ -22,8 +24,10 @@ setup(
         "Environment :: Web Environment",
         "Framework :: Plone",
         "Framework :: Plone :: 5.1",
+        "Framework :: Plone :: 5.2",
         "Programming Language :: Python",
         "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3.7",
         "Operating System :: OS Independent",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
     ],
@@ -42,7 +46,6 @@ setup(
         'plone.api',
         'Products.GenericSetup>=1.8.2',
         'setuptools',
-        'plone.app.imaging',
     ],
     extras_require={
         'test': [
@@ -53,7 +56,7 @@ setup(
             'plone.testing>=5.0.0',
             'plone.app.contenttypes',
             'plone.app.robotframework[debug]',
-        ],
+        ]
     },
     entry_points="""
     [z3c.autoinclude.plugin]
