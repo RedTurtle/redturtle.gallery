@@ -30,10 +30,10 @@
 
     .gallery-modal-wrapper {
         position: absolute;
-        top: 15vh;
+        top: 10vh;
         left: 10%;
         right: 10%;
-        bottom: 15vh;
+        bottom: 10vh;
         max-width: 1024px;
         padding: 10px 20px;
         margin: auto;
@@ -139,7 +139,8 @@
                 }
 
                 .item-title {
-                    position: absolute;
+                    position: static;
+                    padding-top: 15px;
                     left: 0;
                     bottom: 0;
                     width: 100%;
@@ -148,7 +149,7 @@
 
                     .item-wrapper {
                         font-weight: 600;
-                        font-size: 1.2em;
+                        font-size: 1.8rem;
                         padding: 1.5rem 2rem;
                         background: rgba(255, 255, 255, 0.67);
                         border-radius: 5px;
@@ -158,13 +159,14 @@
 
                         p {
                             margin: 0;
-                            line-height: 3rem;
-                            font-size: 1.5rem;
+                            line-height: 2rem;
+                            font-size: 1.5em;
                             font-weight: 400;
                         }
 
                         h3 {
                             margin: 0;
+                            font-size: 1.8rem;
 
                             + p {
                                 margin-top: 0.5rem;
@@ -194,7 +196,7 @@
                             padding: 1rem;
 
                             h3 {
-                                font-size: 1rem;
+                                font-size: 1.6rem;
                             }
 
                             p {
