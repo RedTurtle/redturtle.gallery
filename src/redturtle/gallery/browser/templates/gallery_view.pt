@@ -77,7 +77,7 @@
           <div class="item-title">
               <div class="item-wrapper">
                   <h3></h3>
-                  <p></p>
+                  <p class="sr-only"></p>
               </div>
           </div>
       </script>
