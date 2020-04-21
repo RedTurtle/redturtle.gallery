@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-2.2.1 (unreleased)
+2.2.1 (2020-04-21)
 ------------------
 
 - gallery modal: leaved space for title, handled imgs width/height to fit anyway and be always visible
