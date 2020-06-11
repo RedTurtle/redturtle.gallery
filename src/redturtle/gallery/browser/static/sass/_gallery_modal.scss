@@ -79,6 +79,10 @@
                 margin: auto;
                 height: calc(100% - 3em) !important;
             }
+            .gallery-item.slick-active:focus {
+                outline: 0;
+                border: 1px dotted;
+            }
 
             ul.slick-dots {
                 width: 100%;
