@@ -1,6 +1,12 @@
 require(['jquery'], function($) {
   'use strict';
 
+  function updateTabIndex() {
+    setTimeout(function() {
+      console.log('afterchagnge', $('.slick-current.slick-active'));
+      $('.slick-current.slick-active').attr('tabindex', '0');
+    }, 300);
+  }
   function modalAccessibility() {
     var inputs = $('.gallery-modal-wrapper').find(
       'select, input, textarea, button:not(.gallery-modal-close), a'
@@ -14,6 +20,14 @@ require(['jquery'], function($) {
     if (dots.length) {
       dots.attr('aria-hidden', true);
     }
+    updateTabIndex();
+    $('.gallery-slider').on('afterChange', function(
+      event,
+      slick,
+      currentSlide
+    ) {
+      updateTabIndex();
+    });
 
     lastInput.on('keydown', function(e) {
       if (e.which === 9) {
