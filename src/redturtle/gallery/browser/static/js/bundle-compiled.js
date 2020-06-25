@@ -3,7 +3,6 @@ require(['jquery'], function($) {
 
   function updateTabIndex() {
     setTimeout(function() {
-      console.log('afterchagnge', $('.slick-current.slick-active'));
       $('.slick-current.slick-active').attr('tabindex', '0');
     }, 300);
   }
