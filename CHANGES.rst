@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-2.2.3 (unreleased)
+2.2.3 (2020-06-25)
 ------------------
 
 - Removed debug log
