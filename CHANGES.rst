@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-2.2.2 (unreleased)
+2.2.2 (2020-06-25)
 ------------------
 
 - a11y: fixed foccus on slick item and focus trap
