@@ -4,6 +4,7 @@ require(['jquery'], function($) {
   function updateTabIndex() {
     setTimeout(function() {
       $('.slick-current.slick-active').attr('tabindex', '0');
+      $('.slick-dots button').attr('tabindex', '0');
     }, 300);
   }
   function modalAccessibility() {
@@ -18,13 +19,10 @@ require(['jquery'], function($) {
 
     if (dots.length) {
       dots.attr('aria-hidden', true);
+      dots.find('button').attr('tabindex', 0);
     }
     updateTabIndex();
-    $('.gallery-slider').on('afterChange', function(
-      event,
-      slick,
-      currentSlide
-    ) {
+    $('.gallery-slider').on('afterChange', function() {
       updateTabIndex();
     });
 

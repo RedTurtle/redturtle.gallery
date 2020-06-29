@@ -5,7 +5,8 @@ Changelog
 2.2.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fixed focus issues on focus trap
+  [nzambello]
 
 
 2.2.3 (2020-06-25)
@@ -18,7 +19,7 @@ Changelog
 2.2.2 (2020-06-25)
 ------------------
 
-- a11y: fixed foccus on slick item and focus trap
+- a11y: fixed focus on slick item and focus trap
   [giuliaghisini]
 
 
