@@ -6,8 +6,6 @@
 
   <i18n:registerTranslations directory="locales" />
 
-  <includeDependencies package="." />
-
   <include package=".browser" />
   <include package=".upgrades" />
 
