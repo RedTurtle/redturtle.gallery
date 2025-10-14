@@ -11,7 +11,7 @@
   </records>
 
   <!-- BUNDLE -->
-  <records prefix="plone.bundles/redturtle-gallery-bundle"
+  <!-- <records prefix="plone.bundles/redturtle-gallery-bundle"
            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
     <value key="enabled">False</value>
     <value key="depends">collective-slick</value>
@@ -28,6 +28,6 @@
     <value purge="false">
       <element>galleryslider 1067:600</element>
     </value>
-  </record>
+  </record> -->
 
 </registry>
