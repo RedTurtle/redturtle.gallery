@@ -2,6 +2,6 @@
 <metadata>
   <version>1005</version>
   <dependencies>
-     <dependency>profile-collective.slick:default</dependency>
+     <dependency>profile-redturtle.patterns.slider:default</dependency>
   </dependencies>
 </metadata>

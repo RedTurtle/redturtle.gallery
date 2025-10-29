@@ -33,7 +33,7 @@
       <tal:images tal:repeat="image images">
         <div class="photo-gallery-item"
              tal:define="itemUrl python: image.getURL()">
-          <a title="" href="#"
+          <a class="pat-plone-modal" href="#modal-slider"
              tal:attributes="title image/Description">
             <img class="image-thumb"
                  tal:attributes="src python: itemUrl + '/@@images/image/galleryslider';
@@ -52,37 +52,17 @@
       </metal:empty>
       </metal:listingmacro>
 
-      <script id="photo-gallery-template" type="text/x-template">
-          <div class="gallery-modal-wrapper">
-              <div class="gallery-modal-header">
-                  <div class="gallery-modal-title">
-                      <span></span>
-                  </div>
-                  <button class="gallery-modal-close"
-                          aria-controls="gallery-modal-wrapper"
-                          aria-label="Esci dalla modale"
-                          title="Esci dalla modale">
-                      <span class="icon" aria-hidden="true">&times;</span>
-                      <span class="sr-only">chiudi</span>
-                  </button>
-              </div>
-              <div class="gallery-slider"></div>
-          </div>
-      </script>
-
-      <script id="photo-gallery-item-template" type="text/x-template">
-          <figure class="item-image">
-              <img alt="Gallery item" />
-          </figure>
-          <div class="item-title">
-              <div class="item-wrapper">
-                  <h3></h3>
-                  <p class="sr-only"></p>
-              </div>
-          </div>
-      </script>
   </div>
+  <div id="modal-slider" style="display:none">
+    <section class="pat-slider">
+      <div tal:repeat="image images">
+        <img class="image-thumb" tal:attributes="src python: image.getURL() + '/@@images/image/galleryslider';
+                                 title image/Description;
+                                 alt image/Title" />
 
+      </div>
+    </section>
+  </div>
 </metal:main_macro>
 </metal:content-core>
 
