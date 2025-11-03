@@ -7,4 +7,9 @@
     </value>
   </record>
 
+  <records interface="Products.CMFPlone.interfaces.IBundleRegistry" prefix="plone.bundles/redturtle-gallery">
+    <value key="enabled">True</value>
+    <value key="csscompilation">++plone++redturtle.gallery/css/redturtlegallery.css</value>
+  </records>
+
 </registry>

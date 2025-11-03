@@ -30,6 +30,27 @@
       layer="redturtle.gallery.interfaces.IRedturtleGalleryLayer"
       />
 
+
+  <browser:page
+      name="gallery_modal"
+      for="plone.dexterity.interfaces.IDexterityContainer"
+      class=".gallery.GalleryView"
+      template="templates/gallery_modal.pt"
+      permission="zope2.View"
+      layer="redturtle.gallery.interfaces.IRedturtleGalleryLayer"
+      />
+
+  <browser:page
+      name="gallery_modal"
+      for="plone.app.contenttypes.interfaces.ICollection"
+      class=".gallery.GalleryCollectionView"
+      template="templates/gallery_modal.pt"
+      permission="zope2.View"
+      layer="redturtle.gallery.interfaces.IRedturtleGalleryLayer"
+      />
+
+
+
   <include package="plone.app.contentmenu" />
   <browser:menuItems
       for="plone.app.contenttypes.interfaces.IFolder"

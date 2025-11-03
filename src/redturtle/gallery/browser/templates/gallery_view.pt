@@ -33,8 +33,9 @@
       <tal:images tal:repeat="image images">
         <div class="photo-gallery-item"
              tal:define="itemUrl python: image.getURL()">
-          <a class="pat-plone-modal" href="#modal-slider"
-             tal:attributes="title image/Description">
+          <a class="pat-plone-modal" href="${context/absolute_url}/@@gallery_modal?initialSlide=${repeat/image/index}"
+             tal:attributes="title image/Description" data-pat-plone-modal="modalSizeClass: modal-lg gallery-modal;"
+>
             <img class="image-thumb"
                  tal:attributes="src python: itemUrl + '/@@images/image/galleryslider';
                                  title image/Description;
@@ -53,18 +54,8 @@
       </metal:listingmacro>
 
   </div>
-  <div id="modal-slider" style="display:none">
-    <section class="pat-slider">
-      <div tal:repeat="image images">
-        <img class="image-thumb" tal:attributes="src python: image.getURL() + '/@@images/image/galleryslider';
-                                 title image/Description;
-                                 alt image/Title" />
 
-      </div>
-    </section>
-  </div>
 </metal:main_macro>
 </metal:content-core>
-
 </body>
 </html>
