@@ -48,4 +48,12 @@
     handler=".upgrades.to_1005"
   />
 
+  <genericsetup:upgradeStep
+    source="1005"
+    destination="2000"
+    profile="redturtle.gallery:default"
+    title="Remove bundle"
+    description=""
+    handler=".upgrades.to_2000"
+  />
 </configure>
