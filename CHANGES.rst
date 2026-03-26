@@ -5,7 +5,8 @@ Changelog
 2.3.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Plone 6 compatibility. Use 2.x versions for Plone < 6.
+  [cekk]
 
 
 2.3.0 (2020-07-21)

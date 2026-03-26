@@ -6,8 +6,6 @@
 
   <i18n:registerTranslations directory="locales" />
 
-  <includeDependencies package="." />
-
   <include package=".browser" />
   <include package=".upgrades" />
 
@@ -28,7 +26,14 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       post_handler=".setuphandlers.uninstall"
       />
-
+  
+  <genericsetup:registerProfile
+      name="to_2000"
+      title="RedTurtle Gallery: to 2000"
+      directory="profiles/to_2000"
+      description=""
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
   <utility
       factory=".setuphandlers.HiddenProfiles"
       name="redturtle.gallery-hiddenprofiles" />

@@ -12,38 +12,91 @@ body.template-gallery_view {
         display: none;
     }
 
+    // /* Contenitore principale */
+    // .photo-gallery {
+    //     display: grid;
+    //     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* layout fluido */
+    //     gap: 1rem; /* spazio tra le immagini */
+    //     padding: 1rem;
+    //     box-sizing: border-box;
+    // }
+
+    // /* Ogni elemento della gallery */
+    // .photo-gallery-item {
+    //     position: relative;
+    //     overflow: hidden;
+    //     aspect-ratio: 1 / 1; /* mantiene forma quadrata */
+
+    //     /* Le immagini */
+    //     img {
+    //         width: 100%;
+    //         height: 100%;
+    //         object-fit: cover; /* riempie il contenitore senza deformare */
+    //         transition: transform 0.3s ease, filter 0.3s ease;
+    //         display: block;
+    //     }
+
+    //     a {
+    //         display: block;
+    //         text-decoration: none;
+    //         border: none;
+    //     }
+
+    //     /* Effetto hover */
+    //     &:hover img {
+    //         transform: scale(1.05);
+    //         filter: brightness(0.9);
+    //         cursor: pointer;
+    //     }
+    // }
+
+    // /* Modalità responsive (più spazio su schermi grandi) */
+    // @media (min-width: 768px) {
+    //     .photo-gallery {
+    //         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    //     }
+    // }
+
+    // @media (min-width: 1200px) {
+    //     .photo-gallery {
+    //         gap: 1.5rem;
+    //     }
+    // }
+
     .photo-gallery {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-evenly;
+        columns: 3; /* numero di colonne desktop */
+        column-gap: 10px; /* spazio orizzontale tra le colonne */
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
 
-        .photo-gallery-item {
-            display: inline-block;
-            padding: 20px;
-            width: calc(100% / 3 - 40px);
-
-            a {
-                display: block;
-
-                img {
-                    max-width: 100%;
-                }
-            }
+    @media (max-width: 1200px) {
+        .photo-gallery {
+            columns: 2;
         }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 480px) {
         .photo-gallery {
-            justify-content: center;
-
-            .photo-gallery-item {
-                width: 100%;
-
-                a {
-                    display: block;
-                    text-align: center;
-                }
-            }
+            columns: 1;
         }
+    }
+
+    .photo-gallery-item {
+        break-inside: avoid;
+        margin-bottom: 10px; /* spazio verticale tra le immagini */
+        overflow: hidden;
+    }
+
+    .photo-gallery-item img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .photo-gallery-item:hover img {
+        transform: scale(1.03);
     }
 }
